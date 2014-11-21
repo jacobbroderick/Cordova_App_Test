@@ -1,0 +1,16 @@
+### External Dependencies ###
+node_modules/*
+bootstrap.*
+
+### Compiled Files ###
+build/*
+docs/build/*
+**/.sass-cache/*
+resources/css/*
+phonegap/*
+native/*
+
+### temp and log Files ###
+**/*.temp*
+**/*.log
+**/*-log*
