@@ -13,18 +13,18 @@ Ext.define('Navigate_Testing.controller.controller', {
 		}
 	},
 	onIntentFunction: function(){
-		console.log('hello');
-		navigator.startApp.check("com.google.android.apps.maps", function(message) {
-		console.log(message);
-		},
-		function(error) {
-			console.log('47 no app', error);
-		});
-		navigator.startApp.start("com.google.android.apps.maps", function(message) {
-		console.log(message);
-		},
-		function(error) {
-			console.log('47', error);
-		});
+		console.log(device.platform);
+		
+		if(device.platform == 'Android'){
+			window.open("geo:0,0?q=1205+sw+26th+street");
+		}else{
+				navigator.startApp.start("map://", function(message){
+					console.log(message);
+				},
+				function(error){
+					console.log(error);
+				});
+			}
 	}
+
 });
